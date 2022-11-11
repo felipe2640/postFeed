@@ -15,6 +15,6 @@ server.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 server.use(router);
 
-server.listen(8080, () => {
+server.listen(process.env.PORT ? process.env.PORT : 8080, () => {
   console.log(`Servidor inicializado`);
 });
