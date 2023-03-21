@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Test | Buildbox</title>
+        <title>Post || Feed</title>
       </Head>
       <Container>
         <Form />
