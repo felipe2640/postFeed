@@ -18,8 +18,8 @@ function Form() {
 
   const convertIMGFor64 = async (e: any) => {
     const file = e.target.files[0];
-    const base64 = await convertToBase64(file);
-    setData({ ...data, img: base64 });
+
+    setData({ ...data, img: file });
   };
 
   const disableButton = !data.name || !data.message || !data.img;
@@ -41,7 +41,7 @@ function Form() {
     <HomeContainer onSubmit={submit}>
       {data.img ? (
         <ImageContainer htmlFor="imageInput">
-          <img src={data.img} alt="image avatar" />
+          <img src={URL.createObjectURL(data.img)} alt="image avatar" />
           <Icon icon="bi:trash" className="icon" />
         </ImageContainer>
       ) : (
@@ -55,7 +55,9 @@ function Form() {
         id="imageInput"
         data-testid="imageInput"
         accept="image/jpg, image/png, image/jpeg,"
-        onChange={(e) => convertIMGFor64(e)}
+        onChange={(e) => {
+          convertIMGFor64(e);
+        }}
       />
 
       <input

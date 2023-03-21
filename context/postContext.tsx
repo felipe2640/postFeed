@@ -22,14 +22,15 @@ export function PostProvider({ children }: IPostProvider) {
   }
 
   function onAddPost({ img, message, name }: IOnAddPost) {
-    const data = {
+    let data = {
       id: post.length,
       name,
       message,
       img,
     };
-    setPost((state) => [...state, data]);
     createPost(data);
+    data = { ...data, img: URL.createObjectURL(data.img) };
+    setPost((state) => [...state, data]);
   }
 
   return (

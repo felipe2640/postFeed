@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
-import React from "react";
+import React, { useState } from "react";
+import { convertToBase64 } from "../../backend/helpers";
 import { usePost } from "../../context/postContext";
 import { IPostsIndex } from "../../interfaces/post.interface";
 import { ContainerPosts, PostContainer } from "./post.style";
