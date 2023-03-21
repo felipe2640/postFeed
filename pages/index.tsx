@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Post || Feed</title>
+        <title>Post | Feed</title>
       </Head>
       <Container>
         <Form />
